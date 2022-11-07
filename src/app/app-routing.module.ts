@@ -7,6 +7,13 @@ const routes: Routes = [
   { path: 'orders', component: PageListOrdersComponent },
   { path: 'test', component: PageTestComponent },
   { path: '', redirectTo: 'orders', pathMatch: 'full' },
+  {
+    path: '**',
+    loadChildren: () =>
+      import('./page-not-found/page-not-found.module').then(
+        (m) => m.PageNotFoundModule
+      ),
+  },
 ];
 
 @NgModule({
