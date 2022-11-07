@@ -1,7 +1,18 @@
 <header class="fixed-top">
+  <!-- <button *ngIf="close" (click)="toggle()">open</button>
+  <button *ngIf="!close" (click)="toggle()">close</button> -->
+
+  <ng-container *ngIf="close; then thenBlock else elseBlock"></ng-container>
+
+  <ng-template #thenBlock>
+    <button class="btn btn-sm btn-primary" (click)="toggle()">open</button>
+  </ng-template>
+  <ng-template #elseBlock>
+    <button class="btn btn-sm btn-primary" (click)="toggle()">close</button>
+  </ng-template>
   <app-header></app-header>
 </header>
-<main>
+<main [ngClass]="{'close-aside': close}">
   <div class="shadow position-fixed">
   </div>
   <aside>
