@@ -1,10 +1,11 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 
+import { SharedModule } from '../shared/shared.module';
 import { OrdersRoutingModule } from './orders-routing.module';
-import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orders.component';
 import { PageAddOrderComponent } from './pages/page-add-order/page-add-order.component';
 import { PageEditOrderComponent } from './pages/page-edit-order/page-edit-order.component';
+import { PageListOrdersComponent } from './pages/page-list-orders/page-list-orders.component';
 import { PageTestComponent } from './pages/page-test/page-test.component';
 
 @NgModule({
@@ -12,8 +13,8 @@ import { PageTestComponent } from './pages/page-test/page-test.component';
     PageListOrdersComponent,
     PageAddOrderComponent,
     PageEditOrderComponent,
-    PageTestComponent
+    PageTestComponent,
   ],
-  imports: [CommonModule, OrdersRoutingModule],
+  imports: [CommonModule, OrdersRoutingModule, SharedModule],
 })
 export class OrdersModule {}
