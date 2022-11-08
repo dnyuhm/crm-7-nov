@@ -23,7 +23,6 @@ export class PageListOrdersComponent implements OnInit {
       'Total TTC',
       'Statut',
     ];
-
   }
 
   ngOnInit(): void {}
