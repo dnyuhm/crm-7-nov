@@ -8,8 +8,20 @@ import { OrdersService } from '../../services/orders.service';
   styleUrls: ['./page-list-orders.component.css'],
 })
 export class PageListOrdersComponent implements OnInit {
+  public headers: string[];
   public collection!: Order[];
+
   constructor(private ordersService: OrdersService) {
+    this.headers = [
+      'Type',
+      'Client',
+      'Durée',
+      'Tjm HT',
+      'Total HT',
+      'Total TTC',
+      'Statut',
+    ];
+
     this.ordersService.collection$.subscribe((data) => {
       this.collection = data;
     });
