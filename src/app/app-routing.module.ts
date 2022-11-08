@@ -1,11 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { PageListOrdersComponent } from './orders/pages/page-list-orders/page-list-orders.component';
-import { PageTestComponent } from './orders/pages/page-test/page-test.component';
 
 const routes: Routes = [
-  { path: 'orders', component: PageListOrdersComponent },
-  { path: 'test', component: PageTestComponent },
   { path: '', redirectTo: 'orders', pathMatch: 'full' },
   {
     path: '**',
