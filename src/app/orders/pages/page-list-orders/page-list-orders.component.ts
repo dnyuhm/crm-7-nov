@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { Order } from 'src/app/core/models/order';
 import { OrdersService } from '../../services/orders.service';
@@ -12,9 +13,10 @@ export class PageListOrdersComponent implements OnInit {
   public collection$!: Observable<Order[]>;
   public headers: string[];
 
-  constructor(private ordersService: OrdersService) {
+  constructor(private ordersService: OrdersService, private router: Router) {
     this.collection$ = this.ordersService.collection$;
     this.headers = [
+      'Actions',
       'Type',
       'Client',
       'Durée',
@@ -26,4 +28,8 @@ export class PageListOrdersComponent implements OnInit {
   }
 
   ngOnInit(): void {}
+
+  public goToEdit(id: number) {
+    this.router.navigate(['orders', 'edit', id]);
+  }
 }
