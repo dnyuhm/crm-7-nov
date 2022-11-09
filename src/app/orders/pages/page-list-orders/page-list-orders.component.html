@@ -13,7 +13,13 @@
       <td>{{ order.tjmHt |currency }}</td>
       <td>{{ order.nbJours |total : order.tjmHt |currency }}</td>
       <td>{{ order.nbJours |total : order.tjmHt : order.tva |currency }}</td>
-      <td>{{ order.state }}</td>
+      <td [ngClass]="{
+        'state-canceled': order.state === 'CANCELED',
+        'state-confirmed': order.state === 'CONFIRMED',
+        'state-option': order.state === 'OPTION'
+        }">
+        {{ order.state }}
+      </td>
     </tr>
   </tbody>
 </table>

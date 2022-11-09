@@ -1,0 +1,11 @@
+.state-canceled {
+  background: rgb(229, 37, 66);
+}
+
+.state-option {
+  background: rgb(231, 152, 34);
+}
+
+.state-confirmed {
+  background: rgb(43, 243, 90);
+}
