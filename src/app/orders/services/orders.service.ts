@@ -17,4 +17,8 @@ export class OrdersService {
 
     console.log(this.collection$);
   }
+
+  public add(item: Order): Observable<Order> {
+    return this.httpClient.post<Order>(`${this.urlApi}/orders`, item);
+  }
 }
